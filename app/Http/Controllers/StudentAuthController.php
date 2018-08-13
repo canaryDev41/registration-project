@@ -30,21 +30,6 @@ class StudentAuthController extends Controller
             ]);
         }
 
-        // if (auth()->guard('student')->attempt([
-        //     'password' => $request->password,
-        //     'stdID' => $request->stdID
-        // ])) {
-        //     return response([
-        //         'message' => 'user logged in successfully!',
-        //         'error' => false
-        //     ], 200);
-        // } else {
-        //     return response([
-        //         'message' => 'stdID or password wrong!',
-        //         'error' => true
-        //     ]);
-        // }
-
     }
 
     public function register(Request $request)
