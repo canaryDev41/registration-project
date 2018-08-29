@@ -2,6 +2,7 @@
 
 namespace App;
 
+use http\QueryString;
 use Illuminate\Database\Eloquent\Model;
 
 class Result extends Model
@@ -23,5 +24,15 @@ class Result extends Model
     public function details()
     {
         return $this->hasMany(ResultDetail::class);
+    }
+
+    public function scopeSuccess($query)
+    {
+        return $this->where('gpa', '>=', 2.00);
+    }
+
+    public function scopeFail($query)
+    {
+        return $this->where('gpa', '<', 2.00);
     }
 }
